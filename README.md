@@ -46,10 +46,10 @@ API
 + Agilentのプローブを収録して本サービスを公開。
 
 
-ライセンス
+License
 --------
 
-Copyright (c) 2013 Yuki Naito
+Copyright &copy; 2013 Yuki Naito
  ([@meso_cacase](http://twitter.com/meso_cacase))  
 This software is distributed under [modified BSD license]
  (http://www.opensource.org/licenses/bsd-license.php).  
