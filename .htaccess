@@ -1,0 +1,10 @@
+# mod_rewriteを利用し、リクエストを全て index.cgi で処理する
+RewriteEngine On
+
+# mod_rewriteの適用を終了する条件
+RewriteRule  ^index\.cgi$  -  [L]  # [L] は評価終了
+RewriteRule  ^array\.png$  -  [L]  # [L] は評価終了
+
+# index.cgi で処理
+RewriteCond  %{REQUEST_URI}  ^/(probe2seq/)?
+RewriteRule  .*  /%1index.cgi  [L]  # [L] は評価終了

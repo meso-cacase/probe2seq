@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+<html>
+
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<meta http-equiv='Content-Script-Type' content='text/javascript'>
+<meta http-equiv='Content-Style-Type' content='text/css'>
+<meta name=author content='Yuki Naito'>
+<title>Probe Search</title>
+<style type='text/css'>
+<!--
+	* { font-family:verdana,arial,helvetica,sans-serif }
+	a  { color:black   }
+	.a { color:#3366CC }
+	.g { color:gray    }
+	p,div { font-size:9pt }
+-->
+</style>
+</head>
+
+<body>
+
+<div>
+	<a style='text-decoration:none' href='./'>
+	<img style='vertical-align:middle' border=0 src='array.png'>
+	<font style='vertical-align:middle' size=5>Probe Search</font>
+	</a>
+</div>
+
+<div style='margin:20px 0px'>
+	<form name=probe2seq method=GET action='./'>
+	<input type=text name=query size=70 value='<TMPL_VAR NAME=Q>'>
+	<input type=submit value=Search><br>
+	<input type=radio name=format value='' checked>HTML
+	<input type=radio name=format value=txt       >Text
+	<input type=radio name=format value=fasta     >FASTA |
+	<input type=checkbox name=download value=true >Download
+	</form>
+</div>
+
+<TMPL_VAR NAME=HTML>
+
+<hr><!-- __________________________________________________ -->
+
+<p class=g>Probe Search by
+<a target='_blank' class=a href='http://twitter.com/meso_cacase'>@meso_cacase</a> at 
+<a target='_blank' class=a href='http://dbcls.rois.ac.jp/'>DBCLS</a><br>
+Probe sequences presented on this site may be owned and copyrighted by the manufacturers.
+</p>
+
+</body>
+</html>
