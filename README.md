@@ -40,6 +40,10 @@ API
 更新履歴
 --------
 
+### 2013年12月26日 ###
+
++ Affymetrixのプローブを追加。
+
 ### 2013年9月12日 ###
 
 + Probe Searchをリリース。
@@ -50,7 +54,8 @@ License
 --------
 
 Copyright &copy; 2013 Yuki Naito
- ([@meso_cacase](http://twitter.com/meso_cacase))  
+ ([@meso_cacase](http://twitter.com/meso_cacase)) at  
+Database Center for Life Science (DBCLS), Japan.  
 This software is distributed under [modified BSD license]
  (http://www.opensource.org/licenses/bsd-license.php).  
 Probe sequences presented on this site may be owned and  

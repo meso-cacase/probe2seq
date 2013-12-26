@@ -178,7 +178,7 @@ my $probeid  = $_[0] or return () ;
 my $q        = escape_sedueq(lc($probeid)) ;
 my $host     = '172.17.1.21' ;  # ssd.dbcls.jp (SSD検索サーバ)
 my $port     = '7700' ;
-my $instance = 'arrayprobe' ;
+my $instance = 'arrayprsub' ;
 my $uri      = "http://$host:$port/v1/$instance/query?" .
                "q=(probeid_norm:exact:$q)?to=50?get=probeid_orig,targetseq&format=json" ;
 my $json     = get($uri) or print_txt('ERROR : cannot connect to searcher') ;

@@ -11,12 +11,16 @@ document.probe2seq.query.focus()
 </div>
 
 <div>
-	<h4>Search example:</h4>
+	<h4>Search examples:</h4>
 	<ul>
+		<li><font color=purple>[</font>
+			<a href='1552311_a_at'>1552311_a_at</a>
+			<font color=purple>]</font>
+			...... Convert Affymetrix probe set ID into sequences
 		<li><font color=purple>[</font>
 			<a href='A_23_P101434'>A_23_P101434</a>
 			<font color=purple>]</font>
-			...... Convert probe ID into sequence
+			...... Convert Agilent probe ID into sequence
 	</ul>
 	<h4>URIs:</h4>
 	<ul>
@@ -34,6 +38,22 @@ document.probe2seq.query.focus()
 		</ul>
 		<li>Examples
 		<ul>
+			<li><a href='1552311_a_at'>
+				http://probe.dbcls.jp/<!--
+					--><span style='color:#008000'>1552311_a_at</span></a><br>
+			<li><a href='1552311_a_at.txt'>
+				http://probe.dbcls.jp/<!--
+					--><span style='color:#008000'>1552311_a_at</span><!--
+					-->.<span style='color:#FF0080'>txt</span></a><br>
+			<li><a href='1552311_a_at.fasta'>
+				http://probe.dbcls.jp/<!--
+					--><span style='color:#008000'>1552311_a_at</span><!--
+					-->.<span style='color:#FF0080'>fasta</span></a><br>
+			<li><a href='1552311_a_at.fasta.download'>
+				http://probe.dbcls.jp/<!--
+					--><span style='color:#008000'>1552311_a_at</span><!--
+					-->.<span style='color:#FF0080'>fasta</span><!--
+					-->.<span style='color:brown'>download</span></a>
 			<li><a href='A_23_P101434'>
 				http://probe.dbcls.jp/<!--
 					--><span style='color:#008000'>A_23_P101434</span></a><br>
@@ -41,6 +61,10 @@ document.probe2seq.query.focus()
 				http://probe.dbcls.jp/<!--
 					--><span style='color:#008000'>A_23_P101434</span><!--
 					-->.<span style='color:#FF0080'>txt</span></a><br>
+			<li><a href='A_23_P101434.fasta'>
+				http://probe.dbcls.jp/<!--
+					--><span style='color:#008000'>A_23_P101434</span><!--
+					-->.<span style='color:#FF0080'>fasta</span></a><br>
 			<li><a href='A_23_P101434.fasta.download'>
 				http://probe.dbcls.jp/<!--
 					--><span style='color:#008000'>A_23_P101434</span><!--
@@ -50,6 +74,8 @@ document.probe2seq.query.focus()
 	</ul>
 	<h4>References:</h4>
 	<ul>
+		<li><a target='_blank' href='http://www.affymetrix.com/analysis/index.affx'>
+			Affymetrix NetAffx Analysis Center</a>
 		<li><a target='_blank' href='https://earray.chem.agilent.com/'>
 			Agilent Technologies eArray</a>
 		<li>Source code available via
