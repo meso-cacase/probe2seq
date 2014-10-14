@@ -176,7 +176,7 @@ return $str ;
 sub arrayprobe2seq {  # マイクロアレイのprobe IDを塩基配列に変換
 my $probeid  = $_[0] or return () ;
 my $q        = escape_sedueq(lc($probeid)) ;
-my $host     = '172.17.1.21' ;  # ssd.dbcls.jp (SSD検索サーバ)
+my $host     = '172.18.8.70' ;  # ssd.dbcls.jp (SSD検索サーバ)
 my $port     = '7700' ;
 my $instance = 'arrayprsub' ;
 my $uri      = "http://$host:$port/v1/$instance/query?" .
