@@ -36,7 +36,7 @@ my $download     = '' ;  # ファイルとしてダウンロードするか: (bo
 my $request_uri = $ENV{'REQUEST_URI'} // '' ;
 $request_uri =~ s/\?.*// ;  # '?' 以降のQUERY_STRING部分を除去
 
-(my $query_string_tmp = $request_uri) =~ s{^/(probe2seq/)?}{} ;
+(my $query_string_tmp = $request_uri) =~ s{^/(probe2seq/)?(test/)?}{} ;
 $query_string = url_decode($query_string_tmp) ;
 
 if ($query_string =~ s/(?:\.(html|txt|fasta|fa)|\.(download))+$//i){
@@ -69,7 +69,7 @@ $download =                             # ファイルとしてダウンロー�
 
 #- ▼ パラメータからURIを生成してリダイレクト
 my $redirect_uri = '/' ;
-$redirect_uri .= ($request_uri =~ m{^/probe2seq/}) ? 'probe2seq/' : '' ;
+$redirect_uri .= ($request_uri =~ m{^/(probe2seq/)?(test/)?}) ? "$1$2" : '' ;
 $redirect_uri .= url_encode($query_string) ;
 $redirect_uri .= $format   ? ".$format"  : '' ;
 $redirect_uri .= $download ? '.download' : '' ;

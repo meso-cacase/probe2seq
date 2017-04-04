@@ -1,10 +1,15 @@
 # mod_rewriteを利用し、リクエストを全て index.cgi で処理する
 RewriteEngine On
 
-# mod_rewriteの適用を終了する条件
-RewriteRule  ^index\.cgi$  -  [L]  # [L] は評価終了
-RewriteRule  ^array\.png$  -  [L]  # [L] は評価終了
+# [L] は評価終了
+# [NE] はURLエンコードしない。指定しないと %22query+str%22 が %2522query+str%2522 になる
 
-# index.cgi で処理
-RewriteCond  %{REQUEST_URI}  ^/(probe2seq/)?
-RewriteRule  .*  /%1index.cgi  [L]  # [L] は評価終了
+#- ▼ 全てのリクエストをindex.cgiに送る
+# mod_rewriteの適用を終了する条件
+RewriteRule  ^index\.cgi$  -  [L]
+RewriteRule  ^array\.png$  -  [L]
+
+# それ以外の場合はURIを index.cgi で処理
+RewriteCond  %{REQUEST_URI}  ^/(probe2seq/)?(test/)?
+RewriteRule  .*  /%1%2index.cgi  [L,NE]
+#- ▲ 全てのリクエストをindex.cgiに送る
