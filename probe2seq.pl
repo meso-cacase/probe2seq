@@ -164,8 +164,10 @@ print "Location: $uri\n\n" ;
 exit ;
 } ;
 # ====================
-sub escape_sedueq {  # 「&[]|-\()?:」をエスケープする
+sub escape_sedueq {  # 「%#&[]|-\()?:」をエスケープする
 my $str = $_[0] // '' ;
+$str =~ s/%/%25/g ;
+$str =~ s/#/%23/g ;
 $str =~ s/&/%5c%26/g ;
 $str =~ s/\[/%5b/g ;
 $str =~ s/\]/%5d/g ;
