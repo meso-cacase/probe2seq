@@ -146,14 +146,14 @@ return %query ;
 # ====================
 sub url_decode {  # URLデコード
 my $str = $_[0] or return '' ;
-$str =~ s/%([0-9A-F]{2})/pack('C', hex($1))/ieg ;
 $str =~ tr/+/ / ;
+$str =~ s/%([0-9A-F]{2})/pack('C', hex($1))/ieg ;
 return $str ;
 } ;
 # ====================
 sub url_encode {  # URLエンコード
 my $str = $_[0] or return '' ;
-$str =~ s/([^\w\-\.\_\~\ ])/'%' . unpack('H2', $1)/eg ;
+$str =~ s/([^\w\!\$\&\'\(\)\*\,\-\.\:\;\=\@\_\~\ ])/'%' . uc(unpack('H2', $1))/eg ;
 $str =~ tr/ /+/ ;
 return $str ;
 } ;
