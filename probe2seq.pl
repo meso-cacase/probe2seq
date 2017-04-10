@@ -33,11 +33,11 @@ my $download     = '' ;  # ファイルとしてダウンロードするか: (bo
 #-- ▽ URIからパラメータを取得
 # 例：/probe_id.fasta.download
 #
-my $request_uri = $ENV{'REQUEST_URI'} // '' ;
-$request_uri =~ s/\?.*// ;  # '?' 以降のQUERY_STRING部分を除去
+(my $request_uri  = $ENV{'REQUEST_URI'} // '')
+                  =~ s/\?.*// ;       # '?' 以降のQUERY_STRING部分を除去
 
-(my $query_string_tmp = $request_uri) =~ s{^/(probe2seq/)?(test/)?}{} ;
-$query_string = url_decode($query_string_tmp) ;
+($query_string = url_decode($request_uri) // '')
+               =~ s{^/(probe2seq/)?(test/)?}{} ;
 
 if ($query_string =~ s/(?:\.(html|txt|fasta|fa)|\.(download))+$//i){
 	$1 and $format   = lc $1 ;
@@ -153,7 +153,7 @@ return $str ;
 # ====================
 sub url_encode {  # URLエンコード
 my $str = $_[0] or return '' ;
-$str =~ s/([^\w\!\$\&\'\(\)\*\,\-\.\:\;\=\@\_\~\ ])/'%' . uc(unpack('H2', $1))/eg ;
+$str =~ s/([^\w\!\$\&\'\(\)\*\,\-\.\/\:\;\=\@\_\~\ ])/'%' . uc(unpack('H2', $1))/eg ;
 $str =~ tr/ /+/ ;
 return $str ;
 } ;
